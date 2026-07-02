@@ -1,0 +1,76 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #11141a; /* Dark fallback in case video hasn't loaded yet */
+}
+
+/* Locks the video layer to the viewport frame behind everything */
+.site-background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: -1; /* Placed cleanly behind all HTML content layers */
+    pointer-events: none; 
+    filter: brightness(35%) contrast(110%); 
+}
+
+.banner {
+    position: relative; 
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent; /* Full transparency so video shines through */
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.banner h1 {
+    font-size: 4rem; 
+    margin: 0;      
+    letter-spacing: -1px; 
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); 
+}
+
+.banner p {
+    font-size: 1.5rem; 
+    margin: 0;         
+    color: #e2e8f0;    
+    font-weight: 400;  
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #cf1b1b, #8b1bcf, #1b3ecf); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.content-section {
+    width: 100%;
+    min-height: 100vh; 
+    padding: 40px;
+    box-sizing: border-box;
+    color: white; 
+    
+    /* Elegant alpha overlay allowing the background video to remain partially visible */
+    background-color: rgba(17, 20, 26, 0.85); 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
